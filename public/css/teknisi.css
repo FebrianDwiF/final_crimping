@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Mengatur elemen dalam satu kolom */
+  min-height: 100vh; /* Pastikan tinggi minimal sesuai layar */
+}
+
+/* Sidebar fix di kiri */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px; /* Supaya tidak tertutup sidebar */
+  width: calc(100% - 250px);
+  min-height: 100vh; /* Agar konten penuh */
+}
+/* Konten agar menyesuaikan dengan sidebar */
+.content {
+  margin-left: 250px; /* Geser konten agar tidak tertutup sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Mengambil sisa ruang selain sidebar */
+}
+
+/* Card Style */
+.card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabel lebih besar */
+.wrapper {
+  max-width: 95%;
+  margin: 0 auto;
+}
+.table-container, .table-container1,.table-container2,.table-container3, .table-container4, .table-container5, .table-container6 {
+  max-height: 600px; /* Batasi tinggi tabel agar bisa di-scroll */
+  overflow-y: auto; /* Tambahkan scroll vertikal */
+  border: 1px solid #ddd; /* Opsional: Tambahkan border untuk rapi */
+  position: relative; /* Agar posisi sticky tetap dalam konteks */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255); /* Pastikan header tetap terlihat */
+  z-index: 100; /* Pastikan selalu di atas */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4; /* Warna background biar terlihat */
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 1200px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar h3 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+td.action-buttons a {
+  display: inline-block;
+  padding: 5px 8px;
+  font-size: 12px; /* Ukuran lebih kecil */
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.download-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card {
+  position: relative;
+}
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #fcf8f8;
+}
+
+.logout {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logout:hover {
+  background-color: #cc0000;
+}

@@ -1,0 +1,153 @@
+/* General Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper supaya semua form ada di tengah */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f4f6f9;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Form Container */
+.col-md-4 {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Checkbox Styling */
+.checkbox-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 12px;
+  z-index: 2;
+}
+
+.checkbox-top-right label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkbox-top-right input[type="checkbox"] {
+  margin: 0;
+}
+
+/* Form Styling */
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: left;
+  display: block;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  background: linear-gradient(135deg, #3498db, #1abc9c);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #16a085);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .col-md-4 {
+    max-width: 90%;
+  }
+
+  .checkbox-top-right {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}

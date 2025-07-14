@@ -501,14 +501,30 @@ $selectedData = array_filter($_SESSION['filtered_data']);
             const errorElement = $(`#error_${this.id}`);
 
             if (isNaN(numericValue)) {
-                $(this).css('border', '2px solid red');
+                $(this).css({
+                    'border': '2px solid red',
+                    'background-color': '#ffe6e6' // Merah muda
+                });
                 errorElement.text("Nilai harus angka dan tidak boleh kosong.");
             } else {
                 const errorMessage = validateInput(field, numericValue);
-                $(this).css('border', errorMessage || '2px solid lightgreen');
-                errorElement.text(errorMessage || "");
+                if (errorMessage) {
+                    $(this).css({
+                        'border': '2px solid red',
+                        'background-color': '#ffe6e6' // Merah muda
+                    });
+                    errorElement.text(errorMessage);
+                } else {
+                    $(this).css({
+                        'border': '2px solid lightgreen',
+                        'background-color': '#f0fff0' // Hijau muda
+                    });
+                    errorElement.text("");
+                }
             }
+
         });
+
 
         $('#form-id').on('submit', function(event) {
             event.preventDefault();
